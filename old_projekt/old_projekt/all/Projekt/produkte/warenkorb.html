@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Warenkorb - Jenny Afro & Asia Shop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style_produkte.css">
+</head>
+<body id="alle">
+  <div class="header-actions">
+<!--    <div class="header-icon" title="Zurück zu Produkten" onclick="location.href='index.html'">
+      ← Zurück
+      </div>--!>
+  </div>
+  <div id="cart-page">
+    <h2 class="section-title">Warenkorb</h2>
+    <div id="cart-content"></div>
+    <!--<button class="wieder" onclick="location.href='index.html'">← Zurück zu den Produkten</button>--!>
+      <button class="wieder" onclick="zurueck()">← Zurück zu den Produkten</button>
+    <div id="cart-summary"></div>
+    <button id="checkout-btn" onclick="checkout()">Zur Kasse gehen</button>
+  </div>
+
+  <div class="daten" style="display:none">
+    <h2 class="section">Lieferadresse</h2>
+    <input type="text" id="vorname" placeholder="Vorname">
+    <input type="text" id="nachname" placeholder="Nachname"><br><br>
+    <input type="text" id="adresse" placeholder="Straße und Hausnummer"><br><br>
+    <input type="text" id="zusatz" placeholder="Adressezusatz"><br><br>
+    <input type="text" id="nummer" placeholder="PLZ"><br><br>
+    <input type="text" id="ort" placeholder="Ort"><br><br>
+    <input type="text" id="handy" placeholder="Telefonnummer"><br><br>
+    <input type="text" id="e-mail" placeholder="E-mail"><br><br>
+    <button id="ende" onclick="ende()">Mit Paypal kaufen</button>
+    <div id="payment-status"></div>
+  </div>
+
+  <footer>
+    © 2026 Jenny Afro & Asia Shop – Bremerhaven
+  </footer>
+  <script src="warenkorb.js"></script>
+</body>
+</html>

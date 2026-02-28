@@ -1,0 +1,145 @@
+:root {
+--color-50: #EEF7F3;
+--color-100: #CFE8DC;
+--color-200: #B0D9C6;
+--color-300: #91CAAF;
+--color-400: #72BB99;
+--color-500: #53AC82;
+--color-600: #448D6B;
+--color-700: #377357;
+--color-800: #264F3C;
+--color-900: #173025;
+--color-950: #08110D;
+}
+
+body {
+margin: 0;
+font-family: 'Poppins', sans-serif;
+background: var(--color-50);
+color: var(--color-900);
+}
+
+
+/* Notification Panel (Gmail Style) */
+.notification-panel {
+position: fixed;
+top: 20px;
+right: 20px;
+width: 320px;
+display: flex;
+flex-direction: column;
+gap: 10px;
+z-index: 9999;
+}
+
+/* Einzelne Nachricht */
+.notification {
+padding: 14px 16px;
+border-radius: 10px;
+font-size: 14px;
+box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+background: white;
+border-left: 5px solid var(--color-500);
+color: var(--color-900);
+}
+
+/* Erfolg */
+.notification.success {
+border-left-color: var(--color-500);
+background: var(--color-100);
+}
+
+/* Fehler */
+.notification.error {
+border-left-color: #d9534f;
+background: #ffe5e5;
+}
+
+
+.container {
+width: 90%;
+max-width: 1200px;
+margin: 40px auto;
+}
+
+h1 {
+color: var(--color-800);
+}
+
+h2 {
+margin-top: 40px;
+color: var(--color-700);
+}
+
+.form-vertical {
+display: flex;
+flex-direction: column;
+gap: 15px;
+margin-bottom: 30px;
+max-width: 500px;
+}
+
+input, select {
+padding: 10px;
+border: 2px solid var(--color-200);
+border-radius: 8px;
+background: white;
+}
+
+input:focus, select:focus {
+outline: none;
+border-color: var(--color-500);
+}
+
+button {
+padding: 12px;
+background: var(--color-500);
+border: none;
+color: white;
+font-weight: 600;
+border-radius: 8px;
+cursor: pointer;
+transition: 0.2s;
+}
+
+button:hover {
+background: var(--color-600);
+}
+
+table {
+width: 100%;
+border-collapse: collapse;
+background: white;
+border-radius: 10px;
+overflow: hidden;
+}
+
+th {
+background: var(--color-700);
+color: white;
+padding: 12px;
+}
+
+td {
+padding: 10px;
+border-bottom: 1px solid var(--color-100);
+}
+
+tr:hover {
+background: var(--color-100);
+}
+
+.success {
+background: var(--color-300);
+padding: 10px;
+border-radius: 8px;
+margin-bottom: 15px;
+}
+
+.error {
+background: #ffdddd;
+padding: 10px;
+border-radius: 8px;
+margin-bottom: 15px;
+}
+

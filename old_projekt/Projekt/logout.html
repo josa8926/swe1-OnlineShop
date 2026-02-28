@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Jenny Afro & Asia Shop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #1f4037, #99f2c8);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .login-box.logout-box {
+            background: white;
+            padding: 40px;
+            width: 100%;
+            max-width: 380px;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        .login-box.logout-box h1 {
+            margin-bottom: 10px;
+            color: #1f4037;
+        }
+        .login-box.logout-box p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        .login-box.logout-box input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        .login-box.logout-box label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+            text-align: left;
+        }
+        .login-box.logout-box button.anmelden {
+            width: 100%;
+            padding: 16px;
+            font-size: 18px;
+            background: #1f4037;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .login-box.logout-box button.anmelden:hover {
+            background: #16362f;
+        }
+        .login-box.logout-box button.abmelden {
+            width: 100%;
+            padding: 16px;
+            font-size: 18px;
+            background: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .login-box.logout-box button.abmelden:hover {
+            background: #c82333;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 12px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-box logout-box">
+        <h1>Jenny Afro & Asia Shop</h1>
+        <p>Bremerhaven</p>
+
+        <?php else: ?>
+            <p>Willkommen zurück!<br>
+            <strong><?php echo htmlspecialchars($_SESSION['user']); ?></strong></p>
+
+            <a href="logout.php" style="text-decoration: none;">
+                <button class="abmelden">Abmelden</button>
+            </a>
+        <?php endif; ?>
+
+        <div class="footer">
+            © Jenny Afro & Asia Shop
+        </div>
+    </div>
+</body>
+</html>

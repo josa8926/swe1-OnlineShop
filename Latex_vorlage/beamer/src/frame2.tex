@@ -1,0 +1,32 @@
+\section{Frame Example with table}
+
+\begin{frame}{Frame Example with table}
+	\begin{columns}
+
+		\begin{column}{0.4\textwidth}
+			This is some text in the second frame~\autocite{donovan2015go}. This is some text in the second frame.
+			This is some text in the second~\autocite{kane2018docker}. This is some text in the second frame.
+		\end{column}
+			
+		
+		\begin{column}{0.59\textwidth}
+			\scriptsize{
+				\begin{talltblr}[caption={\LaTeX~Sonderzeichen}]{colspec={X[l,m] X[0.5,c,m]}, rowhead=1, width=0.8\textwidth}\toprule
+					Befehl                         & Ergebnis         \\ \midrule
+					\textbackslash\&               & \&               \\ \cmidrule{1-2}
+					\textbackslash\%               & \%               \\ \cmidrule{1-2}
+					\textbackslash\$               & \$               \\ \cmidrule{1-2}
+					\textbackslash\#               & \#               \\ \cmidrule{1-2}
+					\textbackslash\{               & \{               \\ \cmidrule{1-2}
+					\textbackslash\}               & \}               \\ \cmidrule{1-2}
+					\textbackslash textasciitilde  & \textasciitilde  \\ \cmidrule{1-2}
+					\textbackslash textasciicircum & \textasciicircum \\ \cmidrule{1-2}
+					\textbackslash textbackslash   & \textbackslash   \\ \cmidrule{1-2}
+					\textbackslash glqq\{\}        & \glqq{}          \\ \cmidrule{1-2}
+					\textbackslash grqq\{\}        & \grqq{}          \\ \bottomrule
+				\end{talltblr}}
+		\end{column}
+
+	\end{columns}
+
+\end{frame}

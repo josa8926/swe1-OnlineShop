@@ -1,0 +1,5 @@
+[0] Config.pm:308> INFO - This is Biber 2.20
+[0] Config.pm:311> INFO - Logfile is 'hauptdatei.aux.blg'
+[131] biber:340> INFO - === So Feb 22, 2026, 13:27:17
+[302] Utils.pm:399> ERROR - Cannot find 'hauptdatei.aux.bcf'!
+[302] Biber.pm:136> INFO - ERRORS: 1

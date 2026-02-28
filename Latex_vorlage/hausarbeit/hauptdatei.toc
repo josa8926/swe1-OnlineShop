@@ -1,0 +1,6 @@
+\babel@toc {ngerman}{}\relax 
+\contentsline {section}{\numberline {1}Zusammenfassung eines wissenschaftlichen Artikel}{3}{section.3}%
+\contentsline {section}{Literaturverzeichnis}{5}{section*.4}%
+\contentsline {section}{Anhang}{6}{section*.6}%
+\contentsline {section}{Selbstständigkeitserklärung}{7}{section*.7}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

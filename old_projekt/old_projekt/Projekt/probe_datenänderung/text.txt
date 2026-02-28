@@ -1,0 +1,20 @@
+Der Prototyp ist eine kleine Webanwendung, die zeigt,
+ wie ein moderner Online‑Shop aufgebaut sein kann. 
+ Die wichtigsten Funktionen sind die Registrierung neuer 
+ Benutzer, das Einloggen mit einer Session und das sichere 
+ Speichern von Passwörtern mit password_hash(). Benutzer können
+ auf einer Profilseite ihren Namen, ihre E‑Mail und ihr 
+ Passwort ändern. Außerdem gibt es eine Rollenverteilung: 
+ normale Benutzer und ein Administrator, der eine eigene 
+ Verwaltungsseite betreten darf. Die Startseite des Shops wurde
+ mit HTML und CSS gestaltet. Die technische Umsetzung besteht 
+ aus drei Teilen: HTML und CSS für das Aussehen der Seite, 
+ PHP für die Logik wie Login, Profil und Rechteprüfung, und 
+ MySQL für das Speichern der Benutzerdaten. PHP nutzt 
+ vorbereitete SQL‑Anfragen, um SQL‑Injection zu verhindern, und
+ Sessions, um Benutzer zu schützen. Die Datenbank speichert 
+ jeden Benutzer mit einer automatischen ID, einer E‑Mail, 
+ einem Namen und einem gehashten Passwort. Insgesamt zeigt 
+ der Prototyp die wichtigsten Grundfunktionen eines echten 
+ Webshops und kann später leicht erweitert werden, zum 
+ Beispiel um Produkte, Warenkorb oder Bestellungen

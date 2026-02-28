@@ -1,0 +1,276 @@
+\begin{document}
+
+\tableofcontents
+\newpage
+
+\section{Anforderungsanalyse}
+
+\subsection{Projektbeschreibung}
+
+Im Rahmen dieses Projekts wurde die Konzeption und Entwicklung einer E-commerce Webanwendung für den Jenny Afro \& Asia Shop 
+in Bremerhaven durchgeführt.Das Ziel des Projekts ist die Implementierung eines Online-Shops mit integriertem 
+Bestellverwaltungssystem für afrikanische und asiatische Lebensmittel.
+Die Webanwendung soll Kundinnen und Kunden ermöglichen, Produkte online einzusehen, zu bestellen 
+sowie zwischen Abholung und Lieferung zu wählen. Zusätzlich wird ein Administrationsbereich zur 
+Verwaltung von Produkten und Bestellungen bereitgestellt.
+\subsection{Begründung der Entscheidung}
+\subsubsection{Realer Geschäftsbedarf}
+Der Jenny Afro \& Asia Shop ist ein lokal Einzelhandelsgeschäft, das bislang ausschließlich 
+stationär betrieben wird. Eine digitale Erweiterung des Geschäftsmodells bietet folgende Potenziale:
+
+\begin{itemize}
+    \item Erschließung neuer Kundengruppen
+    \item Verbesserung der Kundenbindung
+    \item Umsatzsteigerung durch zusätzlichen Vertriebskanal
+    \item Optimierung interner Bestellprozesse
+\end{itemize}
+
+\subsubsection{Marktsituation}
+
+Im Bereich ethnischer Lebensmittel existieren in Norddeutschland nur wenige lokal ausgerichtete Online-Angebote. 
+Eine digitale Positionierung verschafft dem Unternehmen einen Wettbewerbsvorteil.
+
+\subsubsection{Technische Machbarkeit}
+
+Die Umsetzung erfolgt mit etablierten Webtechnologien wie PHP, MariaDB/MySQL, HTML, CSS und JavaScript. 
+\section{Stakeholder-Analyse}
+
+\subsection{Primäre Stakeholder}
+
+\subsubsection{Geschäftsinhaberin}
+
+\textbf{Rolle:} Entscheidungsträgerin und Betreiberin
+
+\textbf{Interessen:}
+\begin{itemize}
+    \item Umsatzsteigerung durch Online-Vertrieb
+    \item Effiziente Bestellverwaltung
+    \item Kundenzufriedenheit
+    \item Einfache Bedienbarkeit des Systems
+\end{itemize}
+
+\subsubsection{Kunden}
+
+\textbf{Rolle:} Hauptnutzer der Webanwendung
+
+\textbf{Interessen:}
+\begin{itemize}
+    \item Bequemer Einkauf von zu Hause
+    \item Transparente Produktinformationen
+    \item Sichere Zahlungsabwicklung
+    \item Mobile Optimierung
+    \item Bestellübersicht und -historie
+\end{itemize}
+
+\subsubsection{Lieferanten}
+
+\textbf{Rolle:} Produktversorgung
+
+\textbf{Interessen:}
+\begin{itemize}
+    \item Planbare Bestellmengen
+    \item Langfristige Zusammenarbeit
+    \item Pünktliche Zahlung
+\end{itemize}
+
+\section{Analyse des Nutzungskontexts}
+
+\subsection{Interview-Leitfaden}
+
+Das Interview mit der Geschäftsführerin des Afroshops umfasste sowohl offene als auch geschlossene Fragen. Folgende offene Fragen wurden gestellt:
+
+\begin{enumerate}
+    \item Was würden Sie verbessern?
+    \item Was empfinden Sie als herausfordernd an Ihrer Arbeit?
+    \item Was für Produkte verkaufen Sie? Und wie werden sie sortiert (nach Größe, ...)?
+    \item Was soll mit der Webseite möglich sein? (Bestellen, ...)
+    \item Was passiert nach einer Bestellung?
+    \item Was würden Sie komplett ändern?
+    \item Welche Zahlungsarten müssen unterstützt werden?
+    \item Versandmöglichkeiten? Oder nur Abholung?
+    \item Welche Daten müssen unbedingt gespeichert werden?
+    \item Wie sollen Kunden Produkte finden (Suche, Kategorien, Filter)?
+    \item Welche Medien sollen dargestellt werden (Bilder, Videos...)?
+\end{enumerate}
+
+\subsection{Durchführung}
+
+\textbf{Methode:} Leitfadeninterview mit der Geschäftsführerin
+
+\textbf{Setting:} Im Jenny Afro \& Asia Shop in Bremerhaven
+
+\textbf{Thema:} Anforderungen an den Online-Shop
+
+\textbf{Fragetechnik:} Kombination aus offenen und geschlossenen Fragen, wobei die offenen Fragen den Schwerpunkt bildeten.
+
+\subsection{Ergebnisse des Interviews}
+
+Aus den Antworten der Geschäftsführerin konnten folgende Anforderungen identifiziert werden:
+
+\subsubsection{Funktionale Anforderungen}
+\begin{itemize}
+    \item Produkte verwalten
+    \item Produkte suchen
+    \item Produkte filtern
+    \item Produkte in Warenkorb legen
+    \item Produkte aus Warenkorb entfernen
+    \item Warenkorb anzeigen
+    \item Bestellung bestätigen
+    \item Bestellung verwalten
+    \item Daten verwalten
+    \item Benutzer-Anmeldung
+    \item Benutzer-Abmeldung
+    \item Benutzer-Registrierung
+\end{itemize}
+
+\subsubsection{Nicht-funktionale Anforderungen}
+\begin{itemize}
+    \item Seiten müssen schnell laden
+    \item System muss sicher sein
+    \item Daten müssen verschlüsselt werden
+    \item System muss DSGVO-konform sein
+    \item System muss mobil unterstützt werden
+    \item System muss skalierbar sein
+\end{itemize}
+\section{Personas}
+
+Basierend auf der Kontextanalyse wurden drei Personas entwickelt, die unterschiedliche Nutzertypen des Online-Shops repräsentieren.
+
+\subsection{Persona 1: Amina}
+
+\subsubsection{Demografische Daten}
+\begin{itemize}
+    \item \textbf{Alter:} 32 Jahre
+    \item \textbf{Beruf:} Krankenschwester
+    \item \textbf{Wohnort:} Bremerhaven
+    \item \textbf{Technische Erfahrung:} Mittel -- nutzt Smartphone täglich, Online-Shopping ist Routine
+\end{itemize}
+
+\subsubsection{Ziele}
+\begin{itemize}
+    \item Lieblingsprodukte (Haarpflege, Kosmetik) schnell finden
+    \item Einfach bestellen, ohne komplizierte Registrierung
+\end{itemize}
+
+\subsubsection{Frustrationen}
+\begin{itemize}
+    \item Unübersichtliche Kategorien
+    \item Langsame Ladezeiten
+\end{itemize}
+
+\subsubsection{Anforderungen an den Shop}
+\begin{itemize}
+    \item Produkte suchen
+    \item Produkte filtern
+    \item Produkte in Warenkorb legen
+    \item Bestellung durchführen
+    \item Seiten schnell laden
+    \item System mobil unterstützen
+\end{itemize}
+
+\subsubsection{Storyboard}
+
+Für Amina gehört Online-Shopping zum Alltag. Sie nutzt täglich ihr Smartphone, um Produkte wie Haarpflege oder Kosmetik zu finden. Als sie gezielt nach Shampoo (Wahre Schätze) suchte, erhielt sie jedoch eine lange, unübersichtliche Liste mit Shampoos anderer Marken. Sie ärgert sich darüber, dass die Suche unstrukturiert ist und keine Filtermöglichkeiten bietet. Nach mehreren Minuten fand sie endlich den gewünschten Artikel.
+
+Beim Versuch, ihn in den Warenkorb zu legen, musste sie sich zunächst registrieren. Obwohl sie das Formular ausgefüllt und abgeschickt hatte, lud die Seite lange weiter. Erst nach zehn Minuten erhielt sie eine Bestätigungsmail und konnte ihre Bestellung abschließen.
+
+\subsection{Persona 2: Olamide}
+
+\subsubsection{Demografische Daten}
+\begin{itemize}
+    \item \textbf{Alter:} 24 Jahre
+    \item \textbf{Beruf:} Student
+    \item \textbf{Wohnort:} Bremen
+    \item \textbf{Technische Erfahrung:} Hoch -- sehr internetaffin, kauft oft online
+\end{itemize}
+
+\subsubsection{Ziele}
+\begin{itemize}
+    \item Neue Produkte ausprobieren (Lebensmittel)
+    \item Einfacher Checkout-Prozess
+\end{itemize}
+
+\subsubsection{Frustrationen}
+\begin{itemize}
+    \item Wenn der Checkout zu viele Schritte hat
+    \item Wenn die Produktdarstellung unklar ist
+\end{itemize}
+
+\subsubsection{Anforderungen an den Shop}
+\begin{itemize}
+    \item Produkte filtern
+    \item Warenkorb anzeigen
+    \item Bestellung bestätigen
+    \item System zuverlässig laufen
+\end{itemize}
+
+\subsubsection{Storyboard}
+
+Olamide schaut sich gerne Produkte online an und hat Spaß daran, neue Produkte auszuprobieren. Heute wollte er in einem Webshop einige Lebensmittel wie Milch, Sardinen und Früchte bestellen. Er schaute sich die Produktbilder an und hatte viel Interesse daran. Er wollte sich aber vergewissern, was in dem Produkt enthalten ist (Zutaten), deswegen suchte er die Produktbeschreibung und da stand nur „frisch und qualitätssicher", was ihn nicht überzeugt hatte.
+
+Später entdeckte er eine blonde Perücke für seine Freundin, die ihm sofort gefiel, sodass er sie direkt kaufen wollte. Beim Checkout merkte er aber, dass der Bestellprozess unnötig kompliziert war: Für die Eingabe der Lieferadresse und der Zahlungsinformationen musste er mehrere überflüssige Schritte durchlaufen, was ihn frustrierte.
+
+\subsection{Persona 3: Sarah}
+
+\subsubsection{Demografische Daten}
+\begin{itemize}
+    \item \textbf{Alter:} 28 Jahre
+    \item \textbf{Beruf:} Auszubildende im Einzelhandel
+    \item \textbf{Wohnort:} Bremerhaven
+    \item \textbf{Technische Erfahrung:} Gering -- kauft selten online, eher im Laden
+\end{itemize}
+
+\subsubsection{Ziele}
+\begin{itemize}
+    \item Zum ersten Mal online Afroshop-Produkte bestellen
+    \item Vertrauen in den Shop aufbauen
+\end{itemize}
+
+\subsubsection{Frustrationen}
+\begin{itemize}
+    \item Unsicherheit bei der Dateneingabe
+    \item Angst vor komplizierten Prozessen
+\end{itemize}
+
+\subsubsection{Anforderungen an den Shop}
+\begin{itemize}
+    \item Lieferadresse eingeben
+    \item Zahlungsmethode auswählen
+    \item Bestellung bestätigen
+    \item System muss sicher sein
+\end{itemize}
+
+\subsubsection{Storyboard}
+
+Sarah hat die Gewohnheit, Sachen direkt im Laden zu kaufen. Eines Tages hatte sie Lust auf Kochbanane und frischen Fisch (Makrele) zu essen. Zum ersten Mal entschied sie sich, in einem Online-Afroshop diese Lebensmittel liefern zu lassen. Alle Produkte wurden ausgewählt und in den Warenkorb gelegt und der nächste Schritt war die Bezahlung.
+
+Sarah fühlte sich unsicher, als sie aufgefordert wurde, Daten über ihr Zahlungsmittel wie CVC und IBAN zu übergeben. Sie fürchtete sich darüber, dass ihre persönlichen Informationen in schlechte Hände gelangen und gestohlen werden könnten, denn die Webseite entspricht nicht vollständig den DSGVO-Richtlinien.
+
+\subsection{Vergleich der Personas}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Merkmal} & \textbf{Amina} & \textbf{Olamide} & \textbf{Sarah} \\ \hline
+Alter & 32 Jahre & 24 Jahre & 28 Jahre \\ \hline
+Wohnort & Bremerhaven & Bremen & Bremerhaven \\ \hline
+Tech-Erfahrung & Mittel & Hoch & Gering \\ \hline
+Hauptziel & Schnell finden & Neues ausprobieren & Vertrauen \\ \hline
+Hauptfrustration & Langsame Seiten & Komplexer Checkout & Datenunsicherheit \\ \hline
+\end{tabular}
+\caption{Vergleich der drei Personas}
+\end{table}
+
+\subsection{Gemeinsame Anforderungen}
+
+Trotz unterschiedlicher Profile teilen alle drei Personas grundlegende Anforderungen:
+
+\begin{itemize}
+    \item Übersichtliche Produktdarstellung
+    \item Einfacher Bestellprozess
+    \item Sichere Datenverarbeitung
+    \item Mobile Optimierung (für Amina)
+    \item Klare Produktinformationen (für Olamide)
+    \item Vertrauenswürdiges Design (für Sarah)
+\end{itemize}

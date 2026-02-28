@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Jenny Afro & Asia Shop – Bremerhaven</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    background: #ffffff;
+    color: #111;
+}
+
+/* ---------- TOP BAR ---------- */
+.topbar {
+    background: #111;
+    color: #fff;
+    display: flex;
+    justify-content: flex-end;
+    padding: 8px 60px;
+    font-size: 14px;
+}
+
+.topbar a {
+    color: #fff;
+    margin-left: 25px;
+    text-decoration: none;
+}
+
+/* ---------- HEADER ---------- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    border-bottom: 1px solid #eee;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.header-right a {
+    text-decoration: none;
+    color: #111;
+    font-weight: 500;
+}
+
+.cart {
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* ---------- NAV ---------- */
+nav {
+    text-align: center;
+    padding: 15px 0;
+}
+
+nav a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: #111;
+    font-weight: 500;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+    height: 75vh;
+    background: url("images/hero-shop.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-box {
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    padding: 50px;
+    text-align: center;
+    max-width: 650px;
+}
+
+.hero-box h1 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.hero-box p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.hero-box button {
+    padding: 14px 35px;
+    background: #d4a017;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* ---------- FLAGGEN (DEZENT) ---------- */
+.flags {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    padding: 30px;
+    background: #f7f7f7;
+}
+
+.flags span {
+    font-size: 34px;
+    opacity: 0.9;
+}
+
+/* ---------- KATEGORIEN ---------- */
+.categories {
+    padding: 70px 60px;
+    text-align: center;
+}
+
+.categories h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.category {
+    background: #f1f1f1;
+    padding: 45px 20px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.category:hover {
+    background: #e2e2e2;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+    background: #111;
+    color: #fff;
+    padding: 25px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+    <a href="login2.php">Einloggen</a>
+    <a href="register.php">Registrieren</a>
+</div>
+
+<header>
+    <div class="logo">Jenny Afro & Asia Shop</div>
+    <div class="header-right">
+        <a href="#">Mein Konto</a>
+        <div class="cart">🛒</div>
+    </div>
+</header>
+
+<nav>
+    <a href="#">Startseite</a>
+    <a href="#">Shop</a>
+    <a href="#">Afrika</a>
+    <a href="#">Asien</a>
+    <a href="#">Kontakt</a>
+</nav>
+
+<section class="hero">
+    <div class="hero-box">
+        <h1>Afro & Asia Lebensmittel in Bremerhaven</h1>
+        <p>Qualität, Vielfalt und authentische Produkte</p>
+        <button>Zum Shop</button>
+    </div>
+</section>
+
+<section class="flags">
+    <span title="Kamerun">🇨🇲</span>
+    <span title="Nigeria">🇳🇬</span>
+    <span title="Ghana">🇬🇭</span>
+    <span title="Elfenbeinküste">🇨🇮</span>
+    <span title="China">🇨🇳</span>
+    <span title="Thailand">🇹🇭</span>
+</section>
+
+<section class="categories">
+    <h2>Beliebte Kategorien</h2>
+    <div class="category-grid">
+        <div class="category">Reis & Getreide</div>
+        <div class="category">Gewürze</div>
+        <div class="category">Getränke</div>
+        <div class="category">Trockene Lebensmittel</div>
+        <div class="category">Afrikanische Produkte</div>
+        <div class="category">Asiatische Produkte</div>
+        <div class="category">Soßen & Öle</div>
+        <div class="category">Hülsenfrüchte</div>
+    </div>
+</section>
+
+<footer>
+    © 2026 Jenny Afro & Asia Shop – Bremerhaven
+</footer>
+
+</body>
+</html>

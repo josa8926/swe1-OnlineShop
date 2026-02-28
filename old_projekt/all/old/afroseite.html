@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Jenny Afro & Asia Shop – Bremerhaven</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background-color: #f9f5ef;
+            color: #222;
+            line-height: 1.5;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* HEADER */
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #eee1cf;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .top-bar {
+            background: #1e1b1a;
+            color: #f8e7c7;
+            font-size: 0.85rem;
+            padding: 0.4rem 1.5rem;
+            text-align: center;
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.7rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-mark {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 20%, #ffd166, #f3722c 60%, #1d3557);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+
+        .logo-text-main {
+            font-weight: 800;
+            font-size: 1.3rem;
+            letter-spacing: 0.03em;
+        }
+
+        .logo-text-sub {
+            font-size: 0.8rem;
+            color: #6f6253;
+        }
+
+        .search-wrapper {
+            flex: 1;
+            max-width: 520px;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: #f4ece1;
+            border-radius: 999px;
+            padding: 0.2rem 0.4rem;
+            border: 1px solid #e1d3c0;
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            background: transparent;
+            padding: 0.5rem 0.9rem;
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        .search-btn {
+            border: none;
+            border-radius: 999px;
+            padding: 0.45rem 1.2rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            background: linear-gradient(135deg, #f4a261, #e76f51);
+            color: #fff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.14);
+            transition: transform 0.08s ease, box-shadow 0.08s ease;
+        }
+
+        .search-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .header-icon {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .header-icon span {
+            position: absolute;
+            top: -0.25rem;
+            right: -0.4rem;
+            background: #e76f51;
+            color: #fff;
+            border-radius: 999px;
+            padding: 0 0.3rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .header-actions-small {
+            display: flex;
+            flex-direction: column;
+            text-align: right;
+            gap: 0.1rem;
+        }
+
+        .header-actions-small .line1 {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .header-actions-small .line2 {
+            font-size: 0.8rem;
+            color: #7a6e62;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            border-top: 1px solid #f0e1cd;
+            border-bottom: 1px solid #f0e1cd;
+            background: #fff9f0;
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.4rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .nav-link {
+            font-weight: 600;
+            color: #3e3328;
+            padding-bottom: 0.15rem;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-link:hover {
+            border-bottom-color: #e76f51;
+        }
+
+        .nav-badge {
+            background: #264653;
+            color: #fff9f0;
+            border-radius: 999px;
+            padding: 0.25rem 0.7rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* HERO */
+
+        .hero {
+            max-width: 1200px;
+            margin: 1.5rem auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+            gap: 1.6rem;
+        }
+
+        .hero-text {
+            padding: 1.5rem 1.2rem 1.5rem 1rem;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: #fff;
+            border-radius: 999px;
+            padding: 0.2rem 0.8rem;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: #6c584c;
+            border: 1px solid #f0e0cc;
+            margin-bottom: 0.8rem;
+        }
+
+        .hero-tag-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 20%, #f4a261, #e76f51);
+        }
+
+        .hero-title {
+            font-size: clamp(1.9rem, 2.6vw, 2.5rem);
+            font-weight: 800;
+            color: #261c14;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero-title span {
+            color: #e76f51;
+        }
+
+        .hero-subtitle {
+            font-size: 0.98rem;
+            color: #6f6253;
+            margin-bottom: 1rem;
+        }
+
+        .hero-benefits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-bottom: 1.2rem;
+            font-size: 0.85rem;
+        }
+
+        .hero-benefit {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            color: #4b3f35;
+        }
+
+        .hero-benefit-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            border: 2px solid #f4a261;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.6rem;
+            color: #e76f51;
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            align-items: center;
+        }
+
+        .hero-cta-main {
+            border: none;
+            border-radius: 999px;
+            padding: 0.5rem 1.5rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            background: linear-gradient(135deg, #2a9d8f, #21867a);
+            color: #fff;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.18);
+        }
+
+        .hero-cta-secondary {
+            font-size: 0.9rem;
+            color: #6f6253;
+        }
+
+        .hero-cta-secondary span {
+            color: #2a9d8f;
+            font-weight: 600;
+        }
+
+        .hero-note {
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: #8b7b6a;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            min-height: 260px;
+            background: radial-gradient(circle at 10% 0%, #f4a261 0, #e76f51 30%, #264653 85%);
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.9;
+        }
+
+        .hero-pill {
+            position: absolute;
+            left: 1rem;
+            bottom: 1rem;
+            background: rgba(255, 249, 240, 0.94);
+            border-radius: 14px;
+            padding: 0.6rem 0.8rem;
+            font-size: 0.8rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
+            max-width: 75%;
+        }
+
+        .hero-pill-title {
+            font-weight: 700;
+            color: #3a2f24;
+        }
+
+        .hero-pill-line {
+            font-size: 0.78rem;
+            color: #6f6253;
+        }
+
+        .hero-pill-line strong {
+            color: #e76f51;
+        }
+
+        /* CATEGORY STRIP */
+
+        .category-strip {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.5rem 1.5rem 0.5rem;
+        }
+
+        .category-strip-inner {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            font-size: 0.85rem;
+        }
+
+        .category-chip {
+            background: #fff;
+            border-radius: 999px;
+            padding: 0.25rem 0.85rem;
+            border: 1px solid #e7d7c4;
+            color: #4b3f35;
+            cursor: pointer;
+        }
+
+        .category-chip.active {
+            background: #264653;
+            color: #fff9f0;
+            border-color: #264653;
+            font-weight: 600;
+        }
+
+        /* SECTION TITLE */
+
+        .section {
+            max-width: 1200px;
+            margin: 1.8rem auto 0;
+            padding: 0 1.5rem;
+        }
+
+        .section-headline {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 0.9rem;
+            gap: 0.8rem;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #2b241c;
+        }
+
+        .section-subtitle {
+            font-size: 0.85rem;
+            color: #7a6e62;
+        }
+
+        .section-link {
+            font-size: 0.85rem;
+            color: #2a9d8f;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* PRODUCT GRID */
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid #f0e1cd;
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+            transition: transform 0.08s ease, box-shadow 0.08s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+        }
+
+        .product-image {
+            position: relative;
+            background: #f9f2e7;
+            padding: 0.8rem;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .product-tag {
+            position: absolute;
+            left: 0.9rem;
+            top: 0.9rem;
+            background: rgba(231, 111, 81, 0.95);
+            color: #fff9f0;
+            font-size: 0.75rem;
+            padding: 0.15rem 0.55rem;
+            border-radius: 999px;
+            font-weight: 600;
+        }
+
+        .product-body {
+            padding: 0.7rem 0.95rem 0.8rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .product-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: #2b241c;
+        }
+
+        .product-meta {
+            font-size: 0.8rem;
+            color: #7a6e62;
+            margin-bottom: 0.4rem;
+        }
+
+        .product-bottom {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            margin-top: auto;
+            gap: 0.4rem;
+        }
+
+        .product-price {
+            display: flex;
+            flex-direction: column;
+            gap: 0.1rem;
+        }
+
+        .product-price-main {
+            font-weight: 700;
+            color: #1f2933;
+        }
+
+        .product-price-unit {
+            font-size: 0.78rem;
+            color: #7a6e62;
+        }
+
+        .product-btn {
+            border-radius: 999px;
+            border: none;
+            padding: 0.35rem 0.9rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            background: #f4a261;
+            color: #fff;
+        }
+
+        /* BANNER STRIP */
+
+        .banner-strip {
+            max-width: 1200px;
+            margin: 2rem auto 0;
+            padding: 0 1.5rem 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .banner-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 0.9rem 0.9rem 0.95rem;
+            border: 1px solid #efe0cf;
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        .banner-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+
+        .banner-icon.orange {
+            background: #ffe8d1;
+            color: #e76f51;
+        }
+
+        .banner-icon.green {
+            background: #d9f5ec;
+            color: #2a9d8f;
+        }
+
+        .banner-icon.blue {
+            background: #dde9ff;
+            color: #264653;
+        }
+
+        .banner-text-main {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #2b241c;
+        }
+
+        .banner-text-sub {
+            font-size: 0.8rem;
+            color: #7a6e62;
+        }
+
+        /* FOOTER */
+
+        footer {
+            margin-top: 2rem;
+            background: #1e1b1a;
+            color: #f4e7d6;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.8rem 1.5rem 1.2rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 2rem;
+            font-size: 0.88rem;
+        }
+
+        .footer-logo {
+            margin-bottom: 0.4rem;
+        }
+
+        .footer-logo .logo-text-main {
+            color: #f8e7c7;
+        }
+
+        .footer-desc {
+            color: #d7c7b1;
+            max-width: 340px;
+        }
+
+        .footer-heading {
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-link {
+            display: block;
+            color: #d7c7b1;
+            margin-bottom: 0.25rem;
+            font-size: 0.86rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #3b342d;
+            padding: 0.8rem 1.5rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            font-size: 0.78rem;
+            color: #a79780;
+            display: flex;
+            justify-content: space-between;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .hero-image-wrapper {
+                order: -1;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .banner-strip {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .header-inner {
+                flex-wrap: wrap;
+            }
+
+            .search-wrapper {
+                order: 3;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .hero-text {
+                padding: 1.1rem 0.4rem 1.2rem;
+            }
+
+            .section {
+                padding: 0 1rem;
+            }
+
+            .category-strip {
+                padding: 0.2rem 1rem 0.4rem;
+            }
+
+            .product-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .banner-strip {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="top-bar">
+        Bremerhaven • Afrikanische & asiatische Lebensmittel direkt aus Jenny Afro & Asia Shop
+    </div>
+
+    <div class="header-inner">
+        <a href="#" class="logo">
+            <div class="logo-mark">JA</div>
+            <div>
+                <div class="logo-text-main">Jenny Afro & Asia Shop</div>
+                <div class="logo-text-sub">Afrikanische & asiatische Lebensmittel in Bremerhaven</div>
+            </div>
+        </a>
+
+        <div class="search-wrapper">
+            <div class="search-box">
+                <input type="text" placeholder="Suche nach Fufu, Reis, Yams, Gewürzen, Gemüse …">
+                <button class="search-btn">Suchen</button>
+            </div>
+        </div>
+
+        <div class="header-actions">
+            <div class="header-actions-small">
+                <div class="line1">Schnelle Lieferung & Abholung</div>
+                <div class="line2">Direkt aus Bremerhaven</div>
+            </div>
+
+            <div class="header-icon" title="Mein Konto">
+                👤
+            </div>
+
+            <div class="header-icon" title="Warenkorb">
+                🛒
+                <span>0</span>
+            </div>
+        </div>
+    </div>
+
+    <nav>
+        <div class="nav-inner">
+            <div class="nav-links">
+                <a href="#" class="nav-link">Alle Produkte</a>
+                <a href="#" class="nav-link">Afrikanische Lebensmittel</a>
+                <a href="#" class="nav-link">Asiatische Lebensmittel</a>
+                <a href="#" class="nav-link">Frisches Gemüse</a>
+                <a href="#" class="nav-link">Reis & Getreide</a>
+                <a href="#" class="nav-link">Gewürze & Saucen</a>
+            </div>
+            <div class="nav-badge">
+                Lokal in Bremerhaven • Afro & Asia
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="hero-text">
+            <div class="hero-tag">
+                <div class="hero-tag-dot"></div>
+                Originale Zutaten – Afrika & Asien in Bremerhaven
+            </div>
+            <h1 class="hero-title">
+                Afrikanische & asiatische <span>Zutaten</span> – direkt von Jenny.
+            </h1>
+            <p class="hero-subtitle">
+                Entdecke authentische Grundzutaten aus Afrika und Asien: Fufu, Yams, Okra, Kochbananen,
+                Reis, Nudeln, Gewürze und vieles mehr. Keine Fertiggerichte – nur die Zutaten, mit denen
+                du deine eigenen Gerichte kochen kannst.
+            </p>
+
+            <div class="hero-benefits">
+                <div class="hero-benefit">
+                    <div class="hero-benefit-dot">✓</div>
+                    <span>Lokaler Afro & Asia Shop in Bremerhaven</span>
+                </div>
+                <div class="hero-benefit">
+                    <div class="hero-benefit-dot">✓</div>
+                    <span>Große Auswahl an afrikanischen & asiatischen Basics</span>
+                </div>
+                <div class="hero-benefit">
+                    <div class="hero-benefit-dot">✓</div>
+                    <span>Auf Wunsch Lieferung oder Abholung</span>
+                </div>
+            </div>
+
+            <div class="hero-cta">
+                <button class="hero-cta-main">
+                    Jetzt Sortiment von Jenny entdecken
+                </button>
+                <div class="hero-cta-secondary">
+                    oder stöbere in <span>Fufu, Reis, Gewürzen …</span>
+                </div>
+            </div>
+
+            <p class="hero-note">
+                Tipp: Kombiniere afrikanische und asiatische Zutaten und kreiere deine ganz eigenen Fusion-Gerichte.
+            </p>
+        </div>
+
+        <div class="hero-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1523475472560-d2df97ec485c?auto=format&fit=crop&w=1000&q=80"
+                 alt="Markt mit frischem Gemüse und Zutaten">
+            <div class="hero-pill">
+                <div class="hero-pill-title">Jenny Afro & Asia Shop – Bremerhaven</div>
+                <div class="hero-pill-line">
+                    Frisches Gemüse, Wurzelknollen, Reis und typische Basics aus Afrika und Asien.
+                </div>
+                <div class="hero-pill-line">
+                    Mehr als <strong>200</strong> Produkte ohne Fertiggerichte – nur reine Zutaten.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="category-strip">
+        <div class="category-strip-inner">
+            <button class="category-chip active">Alle Kategorien</button>
+            <button class="category-chip">Fufu & Pounded Yam</button>
+            <button class="category-chip">Reis & Nudeln</button>
+            <button class="category-chip">Kochbananen & Wurzeln</button>
+            <button class="category-chip">Okra & Blattgemüse</button>
+            <button class="category-chip">Bohnen & Getreide</button>
+            <button class="category-chip">Gewürze & Trockenwaren</button>
+            <button class="category-chip">Öle & Saucen</button>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-headline">
+            <div>
+                <h2 class="section-title">Beliebte afrikanische & asiatische Basics</h2>
+                <p class="section-subtitle">
+                    Eine Auswahl an Zutaten, mit denen du klassische Gerichte aus Afrika und Asien kochen kannst –
+                    komplett ohne Fertiggerichte.
+                </p>
+            </div>
+            <button class="section-link">
+                Alle Produkte ansehen →
+            </button>
+        </div>
+
+        <div class="product-grid">
+            <article class="product-card">
+                <div class="product-image">
+                    <span class="product-tag">Fufu</span>
+                    <img src="https://images.unsplash.com/photo-1666001109414-7cc9d0a5c486?auto=format&fit=crop&w=800&q=80"
+                         alt="Fufu-Mehl">
+                </div>
+                <div class="product-body">
+                    <div class="product-title">Cassava Fufu Mehl</div>
+                    <div class="product-meta">1 kg • Für Fufu, Gari, Eba</div>
+                    <div class="product-bottom">
+                        <div class="product-price">
+                            <span class="product-price-main">5,49 €</span>
+                            <span class="product-price-unit">5,49 € / kg</span>
+                        </div>
+                        <button class ="product-btn">In den Warenkorb</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <div class="product-image">
+                    <span class="product-tag">Wurzelgemüse</span>
+                    <img src="https://images.unsplash.com/photo-1615486364099-6b3b96c45751?auto=format&fit=crop&w=800&q=80"
+                         alt="Yams Knollen">
+                </div>
+                <div class="product-body">
+                    <div class="product-title">Frische Yams-Knollen</div>
+                    <div class="product-meta">ca. 1,5 kg • Westafrika</div>
+                    <div class="product-bottom">
+                        <div class="product-price">
+                            <span class="product-price-main">9,99 €</span>
+                            <span class="product-price-unit">6,66 € / kg (ca.)</span>
+                        </div>
+                        <button class="product-btn">In den Warenkorb</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <div class="product-image">
+                    <span class="product-tag">Gemüse</span>
+                    <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80"
+                         alt="Frische Okraschoten">
+                </div>
+                <div class="product-body">
+                    <div class="product-title">Frische Okraschoten</div>
+                    <div class="product-meta">500 g • Für Suppen & Eintöpfe</div>
+                    <div class="product-bottom">
+                        <div class="product-price">
+                            <span class="product-price-main">3,79 €</span>
+                            <span class="product-price-unit">7,58 € / kg</span>
+                        </div>
+                        <button class="product-btn">In den Warenkorb</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <div class="product-image">
+                    <span class="product-tag">Reis</span>
+                    <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&w=800&q=80"
+                         alt="Jasminreis">
+                </div>
+                <div class="product-body">
+                    <div class="product-title">Jasminreis</div>
+                    <div class="product-meta">2 kg • Asiatischer Duftreis</div>
+                    <div class="product-bottom">
+                        <div class="product-price">
+                            <span class="product-price-main">6,49 €</span>
+                            <span class="product-price-unit">3,25 € / kg</span>
+                        </div>
+                        <button class="product-btn">In den Warenkorb</button>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="banner-strip">
+        <div class="banner-card">
+            <div class="banner-icon orange">🔥</div>
+            <div>
+                <div class="banner-text-main">Afrika & Asien in einem Shop</div>
+                <div class="banner-text-sub">
+                    Jenny bringt dir afrikanische und asiatische Zutaten an einem Ort zusammen – mitten in Bremerhaven.
+                </div>
+            </div>
+        </div>
+
+        <div class="banner-card">
+            <div class="banner-icon green">🥬</div>
+            <div>
+                <div class="banner-text-main">Keine Fertiggerichte</div>
+                <div class="banner-text-sub">
+                    Du bekommst ausschließlich Zutaten, mit denen du deine eigenen Gerichte kochen kannst.
+                </div>
+            </div>
+        </div>
+
+        <div class="banner-card">
+            <div class="banner-icon blue">📦</div>
+            <div>
+                <div class="banner-text-main">Lokal & persönlich</div>
+                <div class="banner-text-sub">
+                    Persönliche Beratung vor Ort im Laden – und auf Wunsch Lieferung bis vor deine Haustür.
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <div>
+            <div class="footer-logo logo">
+                <div class="logo-mark">JA</div>
+                <div>
+                    <div class="logo-text-main">Jenny Afro & Asia Shop</div>
+                    <div class="logo-text-sub">Afrikanische & asiatische Lebensmittel in Bremerhaven</div>
+                </div>
+            </div>
+            <p class="footer-desc">
+                Im Jenny Afro & Asia Shop findest du eine große Auswahl an afrikanischen und asiatischen Lebensmitteln,
+                frischem Gemüse und typischen Basics für deine Küche – ohne Fertiggerichte, dafür mit viel Geschmack.
+            </p>
+        </div>
+
+        <div>
+            <div class="footer-heading">Shop</div>
+            <a href="#" class="footer-link">Alle Produkte</a>
+            <a href="#" class="footer-link">Afrikanische Lebensmittel</a>
+            <a href="#" class="footer-link">Asiatische Lebensmittel</a>
+            <a href="#" class="footer-link">Frisches Gemüse</a>
+            <a href="#" class="footer-link">Gewürze & Saucen</a>
+        </div>
+
+        <div>
+            <div class="footer-heading">Service</div>
+            <a href="#" class="footer-link">Kontakt</a>
+            <a href="#" class="footer-link">Versand & Lieferung</a>
+            <a href="#" class="footer-link">Häufige Fragen (FAQ)</a>
+            <a href="#" class="footer-link">Impressum</a>
+            <a href="#" class="footer-link">Datenschutz</a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <span>© 2025 Jenny Afro & Asia Shop – Bremerhaven (Demo-Layout)</span>
+        <span>Dieses Layout ist nur eine Nachbildung zu Übungszwecken.</span>
+    </div>
+</footer>
+
+</body>
+</html>
+

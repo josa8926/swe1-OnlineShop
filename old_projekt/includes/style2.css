@@ -1,0 +1,507 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body.Hauptseite{
+  /* Afrikanisches Hintergrundbild (Platzhalter) */
+  background: url('https://img.freepik.com/photos-premium/table-brunch-dans-cafe-nourriture-delicieuse-table-petit-dejeuner-brunch-remplie-toutes-sortes-nourriture-delicieuse_343960-31696.jpg') center/cover no-repeat fixed;
+  position: relative;
+  color: #111;
+}
+
+/* Dim Overlay über gesamtes Body-Hintergrundbild */
+body::before {
+  content: "";
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color: rgba(0,0,0,0.3); /* gedämpft / dimmer Effekt */
+  z-index: -1;
+}
+
+/* ---------- TOP BAR ---------- */
+.topbar {
+  background: #d4a017;
+  color: #fff;
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px 60px;
+  font-size: 14px;
+}
+
+.topbar a {
+  color: #fff;
+  margin-left: 25px;
+  text-decoration: none;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  border-bottom: 1px solid #eee;
+  background-color: rgba(255,255,255,0.8); /* leicht transparent */
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.header-right a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+}
+
+.cart {
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* ---------- NAV ---------- */
+nav {
+  text-align: center;
+  padding: 15px 0;
+  background-color: rgba(255,255,255,0.7); /* leichte Transparenz */
+}
+
+nav a {
+  margin: 0 20px;
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  height: 75vh;
+  background: url('images/hero-shop.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero::before {
+  content:"";
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color: rgba(0,0,0,0.5); /* Hero Overlay dimmer */
+}
+
+.hero-box {
+  position: relative;
+  color: #fff;
+  padding: 50px;
+  text-align: center;
+  max-width: 650px;
+}
+
+.hero-box h1 {
+  font-size: 38px;
+  margin-bottom: 15px;
+}
+
+.hero-box p {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.hero-box button {
+  padding: 14px 35px;
+  background: #d4a017;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ---------- FLAGGEN (DEZENT) ---------- */
+.flags {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  padding: 30px;
+  background: rgba(255,255,255,0.6); /* leicht transparent, damit Hintergrund sichtbar */
+}
+
+.flags span {
+  font-size: 34px;
+  opacity: 0.9;
+}
+
+/* ---------- KATEGORIEN ---------- */
+.categories {
+  padding: 70px 60px;
+  text-align: center;
+}
+
+.categories h2 {
+  font-size: 28px;
+  margin-bottom: 40px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.category {
+  background: rgba(255,255,255,0.85); /* leicht transparent, dimmer Look */
+  padding: 45px 20px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.category:hover {
+  background: rgba(255,255,255,1);
+}
+
+/* ---------- FOOTER ---------- */
+footer.Hauptseite {
+  background: #111;
+  color: #fff;
+  padding: 25px;
+  text-align: center;
+  margin-top: 60px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+}
+
+.success-box {
+  background: #e8f5e9;
+  color: #1b5e20;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+.error-box {
+  background: #ffebee;
+  color: #b71c1c;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+body.login{
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(to bottom, #f4d03f, #d4a017, #8b6914);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-box {
+  background: white;
+  padding: 40px;
+  width: 100%;
+  max-width: 380px;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.login-box h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #1f4037;
+}
+
+.login-box p {
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.login-box label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  background: #d4a017;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-box button:hover {
+  background: #a67c12;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 12px;
+  color: #777;
+}
+
+body.reg {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(to bottom, #f4d03f, #d4a017, #8b6914);;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Registrierung-box {
+  background: white;
+  padding: 40px;
+  width: 100%;
+  max-width: 380px;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.Registrierung-box h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #1f4037;
+}
+
+.Registrierung-box p {
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.Registrierung-box label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.Registrierung-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.Registrierung-box button {
+  width: 100%;
+  padding: 12px;
+  background: #d4a017;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.Registrierung-box button:hover {
+  background: #a67c12;
+}
+header.reglog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #b88a14;
+}
+
+header.back-home {
+color: white 
+}
+
+body.kontakt {
+            font-family: Arial, sans-serif;
+            background: white;
+            padding-top: 80px;
+            min-height: 100vh;
+        }
+
+           .container {
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .contact-section {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto 0 auto;
+            padding: 40px 20px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .info-column {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .company-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .contact-info {
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        .contact-info h2 {
+            color: #d4a017;
+            margin-bottom: 30px;
+            font-size: 28px;
+            grid-column: 1 / -1;
+        }
+
+        .contact-info h2 {
+            color: #d4a017;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+
+        .info-item {
+            margin-bottom: 25px;
+            display: flex;
+            align-items: start;
+        }
+
+        .info-item .icon {
+            color: #d4a017;
+            font-size: 24px;
+            margin-right: 15px;
+            min-width: 30px;
+        }
+
+        .info-item h3 {
+            color: #333;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+
+        .info-item p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .info-item a {
+            color: #d4a017;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .info-item a:hover {
+            color: #b88a14;
+            text-decoration: underline;
+        }
+
+        .hours-table {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .hours-table tr {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .hours-table tr:last-child {
+            border-bottom: none;
+        }
+
+        .day {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .time {
+            color: #666;
+        }
+
+        .closed {
+            color: #d9534f;
+            font-weight: 500;
+        }
+
+        #map {
+            height: 600px;
+            width: 100%;
+            border-radius: 0;
+            box-shadow: none;
+            margin-top: 0;
+        }
+
+        .map-container {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+

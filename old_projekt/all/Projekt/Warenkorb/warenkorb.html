@@ -1,0 +1,510 @@
+<!DOCTYPE>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <title>Warenkorb</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <style>
+footer {
+     background: #111;
+     color: #fff;
+     padding: 25px;
+     text-align: center;
+     margin-top: 60px;
+ }
+.product-grid{
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #f0e1cd;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+ .product-image img {
+   width: 100%;
+   height: 170px;
+   object-fit: cover;
+   border-radius: 10px;
+ }
+ .product-image {
+   position: relative;
+   background: #f9f2e7;
+   padding: 0.8rem;
+ }
+
+ .product-image img {
+   width: 100%;
+   height: 170px;
+   object-fit: cover;
+   border-radius: 10px;
+ }
+ .img{
+   max-width: 100%;
+   display: block;
+ }
+ body {
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+   background-color: #f9f5ef;
+   color: #222;
+   line-height: 1.5;
+ }
+ .product-item{
+   display: grid;
+   grid-template-columns: repeat(4, minmax(0, 1fr));
+   gap: 1rem;
+ }
+ .product-price {
+   display: flex;
+   flex-direction: column;
+   gap: 0.1rem;
+ }
+
+ .product-price-main {
+   font-weight: 700;
+   color: #1f2933;
+ }
+
+ .product-price-unit {
+   font-size: 0.78rem;
+   color: #7a6e62;
+ }
+ .item {
+   position: absolute;
+   left: 0.9rem;
+   top: 0.9rem;
+    background: #d4a017;
+  /* background: rgba(231, 111, 81, 0.95);*/
+   color: #fff9f0;
+   font-size: 0.75rem;
+   padding: 0.15rem 0.55rem;
+   border-radius: 999px;
+   font-weight: 600;
+ }
+ .product-title {
+   font-size: 0.9rem;
+   font-weight: 600;
+   margin-bottom: 0.25rem;
+   color: #2b241c;
+ }
+ .product-btn {
+   border-radius: 999px;
+   border: none;
+   padding: 0.35rem 0.9rem;
+   font-size: 0.8rem;
+   font-weight: 600;
+   cursor: pointer;
+   background: #d4a017;
+  /* background: #f4a261;*/
+   color: #fff;
+ }
+ .product-bottom {
+   display: flex;
+   align-items: flex-end;
+   justify-content: space-between;
+   margin-top: auto;
+   gap: 0.4rem;
+ }
+ .header-icon span {
+   position: absolute;
+   top: -0.25rem;
+   right: -0.4rem;
+   background: #e76f51;
+   color: #fff;
+   border-radius: 999px;
+   padding: 0 0.3rem;
+   font-size: 0.7rem;
+   font-weight: 600;
+ }
+
+ .header-icon {
+   position: relative;
+   cursor: pointer;
+ }
+ .header-actions {
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+   font-size: 0.9rem;
+   justify-content: space-between;
+   padding: 1rem;
+ }
+ #cart-page .cart-img {
+   width: 100px;       /* Breite */
+   height: 100px;      /* Höhe */
+   object-fit: cover;  /* Bild bleibt proportional, füllt Box */
+   border-radius: 8px;
+ }
+ #cart-summary{
+   font-weight:700;
+   font-size:1.1rem;
+   margin-bottom:1rem;
+   margin-top:2.5rem;
+ }
+ #checkout-btn{
+   display:none;
+   margin-bottom:1rem;
+   padding:0.5rem 1rem;
+   border:none;
+   background: #d4a017;
+  /* background:#2a9d8f;*/
+   color:white;
+   border-radius:8px;
+   font-weight:600;
+   cursor:pointer;
+ }
+ .search-wrapper {
+   /*   flex: 1 ;*/
+   max-width: 300px;
+ }
+
+ #search-input {
+   display: flex;
+   align-items: center;
+   background: #f4ece1;
+   border-radius: 999px;
+   padding: 0.2rem 0.4rem;
+   border: 1px solid #e1d3c0;
+ }
+
+ #search-input input {
+   flex: 0;
+   width: 199px;
+   border: none;
+   background: transparent;
+   padding: 0.5rem 0.9rem;
+   font-size: 0.95rem;
+   outline: none;
+ }
+
+ #search-btn {
+   border: none;
+   border-radius: 999px;
+   padding: 0.45rem 1.2rem;
+   font-size: 0.9rem;
+   font-weight: 600;
+   cursor: pointer;
+   background: #d4a017;
+   /*background: linear-gradient(135deg, #f4a261, #e76f51);*/
+   color: #fff;
+   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.14);
+   transition: transform 0.08s ease, box-shadow 0.08s ease;
+ }
+
+ #search-btn:hover {
+   transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+ }
+ #ende{
+
+   margin-bottom:1rem;
+   padding:0.5rem 1rem;
+   border:none;
+    background: #d4a017;
+   /*background:#2a9d8f;*/
+   color:white;
+   border-radius:8px;
+   font-weight:600;
+   cursor:pointer;
+ }
+ </style>
+  <body>
+    <div class="header-actions">
+      <div class="header-icon" title="Warenkorb" onclick="showWare()">
+        🛒
+        <span id="cart-count">0</span>
+      </div>
+
+      <div class="search-wrapper">
+        <div id="search-input">
+          <input type="text" id="search-box" placeholder="Suche...">
+          <button id="search-btn">Suchen</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="result"></div>
+
+    <h1 class="product">Produkte</h1>
+    <div class="product-item">
+      <article class="product-grid">
+        <div class="product-image">
+          <span class="item">Fufu</span>
+          <img src=https://cdn.modernghana.com/story_/770/400/39201781753_89598063.jpg>
+        </div>
+        <div class="product-title">Fufu Mehl</div>
+        <div class="product-bottom">
+          <div class="product-price">
+            <span class="product-price-main">5,39 €</span>
+            <span class="product-price-unit">5,49 €/ Kg</span>
+          </div>
+          <button class="product-btn" onclick="addToWare(this)">In den Warenkorb</button>
+        </div>
+      </article>
+
+      <article class="product-grid">
+        <div class="product-image">
+          <span class="item">Okra</span>
+          <img src=https://www.cookedandloved.com/wp-content/uploads/2020/02/what-is-okra-s.jpg>
+        </div>
+        <div class="product-title">frische Okra</div>
+        <div class="product-bottom">
+          <div class="product-price">
+            <span class="product-price-main">8,99 €</span>
+            <span class="product-price-unit">4,89 €/ Kg</span>
+          </div>
+          <button class="product-btn" onclick="addToWare(this)">In den Warenkorb</button>
+        </div>
+      </article>
+
+      <article class="product-grid">
+        <div class="product-image">
+          <span class="item">Plantain</span>
+          <img src=https://arc-anglerfish-arc2-prod-abccolor.s3.amazonaws.com/public/WGTY2KMCHJEEJCVNR7KVNYHIWY.jpg>
+        </div>
+        <div class="product-title">Grüne Plantain</div>
+        <div class="product-bottom">
+          <div class="product-price">
+            <span class="product-price-main">6,39 €</span>
+            <span class="product-price-unit">3,49 €/ Kg</span>
+          </div>
+          <button class="product-btn" onclick="addToWare(this)">In den Warenkorb</button>
+        </div>
+      </article>
+
+      <article class="product-grid">
+        <div class="product-image">
+          <span class="item">Peanut</span>
+          <img src=https://investforesight.com/wp-content/uploads/2019/12/Peanuts-850x455.jpg>
+        </div>
+        <div class="product-title">Groundnut aus Kamerun</div>
+        <div class="product-bottom">
+          <div class="product-price">
+            <span class="product-price-main">10 €</span>
+            <span class="product-price-unit">7,80 €/ Kg</span>
+          </div>
+          <button class="product-btn" onclick="addToWare(this)">In den Warenkorb</button>
+        </div>
+      </article>
+
+      <article class="product-grid">
+        <div class="product-image">
+          <span class="item">Gemüse</span>
+          <img src=https://www.maetipoeu.com.br/wp-content/uploads/2015/05/propriedades_legumes_verduras-mae_tipo_eu-10.jpg>
+        </div>
+        <div class="product-title">frische Gemüse</div>
+        <div class="product-bottom">
+          <div class="product-price">
+            <span class="product-price-main">3,99 €</span>
+            <span class="product-price-unit">2,55 €/ Kg</span>
+          </div>
+          <button class="product-btn" onclick="addToWare(this)">In den Warenkorb</button>
+        </div>
+      </article>
+
+      <article class="product-grid">
+        <div class="product-image">
+          <span class="item">Bohne</span>
+          <img src=https://www.seyfrieds.de/media/image/3f/c3/4b/Kidneybohnen.jpg>
+        </div>
+        <div class="product-title">Kidneybohne</div>
+        <div class="product-bottom">
+          <div class="product-price">
+            <span class="product-price-main">21,66 €</span>
+            <span class="product-price-unit">4,99 €/ Kg</span>
+          </div>
+          <button class="product-btn" onclick="addToWare(this)">In den Warenkorb</button>
+        </div>
+      </article>
+    </div>
+
+
+    <div id="cart-page" style="display:none;">
+      <h2 class="section-title">Warenkorb</h2>
+      <div id="cart-content"></div>
+      <button class="wieder" onclick="showProducts()">← Zurück zu den Produkten</button>
+      <div id="cart-summary"></div>
+      <button id="checkout-btn" onclick="checkout()">Zur Kasse gehen</button>
+
+      <!--    <div id="paypal-button-container" style="margin-top:1rem;"></div>-->
+    </div>
+    <div class="daten" style="display:none">
+      <h2 class="section">Lieferadresse</h2>
+      <input type="vorname" id="vorname" placeholder="Vorname">
+      <input type="Nachname" id="nachname" placeholder="Nachname"><br><br>
+      <input type="text" id="adresse" placeholder="Straße und Hausnummer"><br><br>
+      <input type="text" id="zusatz" placeholder="Adresszusatz"><br><br>
+      <input type="text" id="nummer" Placeholder="PLZ"><br><br>
+      <input type="text" id="ort" placeholder="Ort"><br><br>
+      <input type="text" id="handy" placeholder="Telefonnummer"><br><br>
+      <input type="text" id="e-mail" placeholder="E-mail"><br><br>
+      <button id="ende" onclick="ende()">Mit Paypal kaufen</button>
+      <div id="payment-status"></div>
+    </div>
+     <footer>
+     © 2026 Jenny Afro & Asia Shop – Bremerhaven
+ </footer>
+ 
+    <script>
+      window.ware = [];
+      function addToWare(button) {
+        const card = button.closest(".product-grid");
+        const item = {
+          title: card.querySelector(".product-title").textContent,
+//      price: parseFloat(card.querySelector(".product-price-main").textContent.replace("€","").replace(",",".")),
+             price: card.querySelector(".product-price-main").textContent,
+          image: card.querySelector(".product-image img").src,
+           qty: 1
+        };
+        const existingItem = ware.find(w => w.title === item.title);
+         if (existingItem) {
+    existingItem.qty++;
+  } else {
+        ware.push(item);
+  }
+        updateCartCount();
+        showWare();
+      }
+      function showWare() {
+        document.querySelector(".product-item").style.display = "none";
+        document.getElementById("cart-page").style.display = "block";
+        document.querySelector(".product").style.display = "none";
+        let html = "";
+        ware.forEach((item, index) => {
+          html += `
+             <div class="cart-item">
+                 <img class="cart-img" src="${item.image}">
+                 <div class="cart-title">${item.title}</div>
+
+                 <div class="cart-bottom">
+                   <button onclick="changeQty(${index}, -1)">➖</button>
+          <span>${item.qty}</span>
+          <button onclick="changeQty(${index}, 1)">➕</button>
+                     <div class="cart-price">${item.price}</div>
+                   </div>
+             </div>
+         `;
+        });
+
+        document.getElementById("cart-content").innerHTML =
+          html || "<p>Dein Warenkorb ist leer.</p>";
+        document.querySelector(".wieder").style.display = "block";
+        calcTotal();
+
+      }
+
+      // Produkt entfernen
+      function changeQty(index, delta) {
+  ware[index].qty += delta;
+
+  if (ware[index].qty <= 0) {
+    ware.splice(index, 1);
+  }
+
+  updateCartCount();
+  showWare();
+}
+       function showProducts() {
+        document.getElementById("cart-page").style.display = "none";
+        document.querySelector(".product-item").style.display = "grid";
+      }
+
+      function updateCartCount() {
+        const count = ware.reduce((sum, item) => sum + item.qty, 0);
+        document.getElementById("cart-count").textContent = count;
+      }
+      function searchProducts() {
+        const text = document.getElementById("search-box").value.toLowerCase();
+
+        document.querySelectorAll(".product-grid").forEach(card => {
+          const title = card.querySelector(".product-title").textContent.toLowerCase();
+
+          card.style.display = title.includes(text) ? "block" : "none";
+        });
+      }
+
+      document.getElementById("search-btn").onclick = searchProducts;
+
+
+      function calcTotal() {
+        let sum = 0;
+        ware.forEach(item => {
+          const price = parseFloat(item.price.replace("€", "").replace(",", "."));
+          sum += price * item.qty;
+        });
+        document.getElementById("cart-summary").textContent =
+          "Gesamt: " + sum.toFixed(2).replace(".", ",") + " €";
+        document.getElementById("checkout-btn").style.display =
+          ware.length > 0 ? "block" : "none";
+      }
+      function checkout() {
+
+        document.querySelector(".daten").style.display = "block";
+        document.querySelector(".header-actions").style.display = "none";
+        document.getElementById("cart-page").style.display = "none";
+        document.querySelector(".section-title").style.display = "none";
+        showWare();
+        document.querySelector(".wieder").style.display = "none";
+        document.getElementById("checkout-btn").style.display = "none";
+      }
+      function ende() {
+        console.log("ENDE FUNKTION WURDE AUSGEFÜHRT");
+        let a = document.getElementById("vorname").value.trim();
+        let b = document.getElementById("nachname").value.trim();
+        let c = document.getElementById("adresse").value.trim();
+        let d = document.getElementById("ort").value.trim();
+   //     let e = document.getElementById("zusatz").value.trim();
+        let f = document.getElementById("nummer").value.trim();
+        let g = document.getElementById("e-mail").value.trim();
+        let i = document.getElementById("handy").value.trim();
+     if( a === "" || b === "" || c === "" || d === "" || f === "" || g === "" || i
+=== "" ) {
+         alert("Eingabefelder bitte ausfüllen !");
+       return;
+        }
+         const orderData = {
+     vorname: a,
+     nachname: b,
+     adresse: c,
+     ort: d,
+ //    zusatz: e,
+     plz: f,
+     email: g,
+     handy: i,
+     produkte: ware
+   };
+ console.log("WARE BEIM ABSENDEN:", orderData);
+   fetch("save_order.php", {
+     method: "POST",
+    headers: { "Content-Type": "application/json" },
+       body: JSON.stringify(orderData)
+   })
+   .then(res => res.text())
+   .then(msg => console.log(msg));
+
+        alert("Zahlung erfolgreich! Danke " + a + " " + b);
+
+        ware.length = 0;
+        updateCartCount();
+        document.querySelector(".daten").style.display = "none";
+        document.querySelector(".header-actions").style.display = "flex";
+        document.getElementById("cart-page").style.display = "none";
+        document.querySelector(".product").style.display = "block";
+        document.querySelector(".product-item").style.display = "grid";
+
+        document.getElementById("vorname").value= "";
+        document.getElementById("nachname").value= "";
+        document.getElementById("adresse").value= "";
+        document.getElementById("ort").value= "";
+        document.getElementById("zusatz").value= "";
+        document.getElementById("nummer").value= "";
+        document.getElementById("e-mail").value= "";
+        document.getElementById("handy").value= "";
+
+}
+
+    </script>
+  </body>
+</html>

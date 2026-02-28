@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Mein Profil ändern</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<?php
+session_start(); // Starte die Session (wichtig für $_SESSION['user'])
+
+// DB-Verbindung (passe an deine ein – z. B. include 'db.php';)
+$mysqli = new mysqli("localhost", "dein_user", "dein_pass", "deine_db");
+if ($mysqli->connect_error)
+
+$stmt = $mysqli->prepare("SELECT name, email FROM USERS WHERE email = ?");
+$stmt->bind_param("s", $_SESSION['user']);
+$stmt->execute();
+$stmt->bind_result($current_name, $current_email);
+$stmt->fetch();
+$stmt->close();
+
+// Inkludiere den Update-Code (oder kopiere ihn hier rein)
+include 'includes/update.php';
+
+?>
+
+<div class="box">
+    <h1>Mein Profil</h1>
+    <p>Hallo <strong><?php echo htmlspecialchars($current_name ?? ''); ?></strong>!</p>
+    <?php if (!empty($msg)): ?>
+        <p class="msg"><?php echo htmlspecialchars($msg); ?></p>
+    <?php endif; ?>
+    <?php if (!empty($err)): ?>
+        <p class="err"><?php echo htmlspecialchars($err); ?></p>
+    <?php endif; ?>
+    <h2>Daten ändern</h2>
+    <form method="post">
+        <input type="text" name="name" value="<?php echo htmlspecialchars($current_name ?? ''); ?>" required placeholder="Name">
+        <input type="email" name="email" value="<?php echo htmlspecialchars($current_email ?? ''); ?>" placeholder="E-Mail (leer lassen = unverändert)">
+        <button type="submit" name="speichern" class="gruen">Speichern</button>
+    </form>
+    <h2>Passwort ändern</h2>
+    <form method="post">
+        <input type="password" name="alt" required placeholder="Altes Passwort">
+        <input type="password" name="neu1" required placeholder="Neues Passwort">
+        <input type="password" name="neu2" required placeholder="Wiederholen">
+        <button type="submit" name="passwort" class="gruen">Ändern</button>
+    </form>
+    <h2 style="color:red;">Konto löschen</h2>
+    <form method="post">
+        <input type="text" name="confirm" required placeholder="LÖSCHEN eingeben">
+        <button type="submit" name="loeschen" class="rot">Konto löschen</button>
+    </form>
+</div>
+</body>
+</html>

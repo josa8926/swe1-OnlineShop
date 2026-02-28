@@ -1,0 +1,92 @@
+body {
+   align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f6f7f9;
+    margin: 0;
+    color: #222;
+}
+
+
+.box {
+    max-width: 1000px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+
+h1 {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #0076ff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    text-align: left;
+    background: #f2f3f5;
+    padding: 14px;
+    font-weight: 600;
+}
+
+td {
+    padding: 14px;
+    border-bottom: 1px solid #eee;
+}
+
+tr:hover {
+    background: #fafafa;
+}
+
+
+.status {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    display: inline-block;
+}
+
+
+.status-bearbeitung {
+    background: #fff3cd;
+}
+
+.status-versendet {
+    background: #d4edda;
+}
+
+.status-storniert {
+    background: #f8d7da;
+}
+
+
+button {
+    background: #0076ff;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background: #005fcc;
+}
+

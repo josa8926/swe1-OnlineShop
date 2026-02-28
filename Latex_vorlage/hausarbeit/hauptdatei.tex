@@ -1,0 +1,437 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                 %
+%                 Packages / Grundeinstellungen                   %
+%                                                                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Erstellen eines PDF/A 4 
+\DocumentMetadata{
+    pdfversion=2.0,
+    pdfstandard=A-4,
+}
+
+% Festlegung des Allgemeinen Dokumentenformat
+\documentclass[a4paper,12pt,parskip=half,headsepline,DIV=12,numbers=noenddot]{scrartcl}
+
+%%%%%% Muss in die documentclass %%%%%%%%
+%BCOR=12mm, Korrektur fuer die Bindung
+%DIV12 DIV-Wert fuer die Erstellung des Satzspiegels
+
+% Keine floats in andere Sections
+\usepackage[section]{placeins}
+
+% Weitere Pakete
+\usepackage{microtype}
+\usepackage{caption}
+\usepackage{fontspec}
+\usepackage{pdflscape}
+\usepackage{float}
+\usepackage{dirtree}
+\usepackage{subcaption}
+\usepackage{enumitem}
+
+ %pdf dateien includen
+  \usepackage{pdfpages}
+
+% Booktabs Tabellen
+\usepackage{tabularray}
+\UseTblrLibrary{booktabs}
+\DefTblrTemplate{contfoot-text}{normal}{Fortsetzung auf nächster Seite}
+\SetTblrTemplate{contfoot-text}{normal}
+\DefTblrTemplate{conthead-text}{normal}{}
+\SetTblrTemplate{conthead-text}{normal}
+
+% Um Captions in Tabellen zu deaktivieren 
+%\DefTblrTemplate{caption-tag}{default}{}
+%\DefTblrTemplate{caption-sep}{default}{}
+%\DefTblrTemplate{caption-text}{default}{}
+
+% Grafiken aus PNG Dateien einbinden
+\usepackage{graphicx}
+
+% Deutsche Sonderzeichen und Silbentrennung nutzen
+\usepackage[ngerman]{babel}
+\usepackage{blindtext}
+
+% Eurozeichen einbinden
+\usepackage[right]{eurosym}
+
+% Kopf- und Fußzeilen
+\usepackage[headsepline,autooneside=false]{scrlayer-scrpage}
+\clearpairofpagestyles
+
+% Schriftart 
+\usepackage{lmodern}
+\setmainfont{TeX Gyre Termes}
+\setsansfont{TeX Gyre Adventor}
+
+% Floatende Bilder ermöglichen
+\usepackage{floatflt}
+
+% tikz
+\usepackage{tikz}
+\usetikzlibrary{calc,arrows,math}
+\usetikzlibrary{shapes.geometric,positioning}
+
+%% Schaltpläne nach europäischen Richtlinien
+\usepackage[european]{circuitikz}
+\tikzset{x=1mm,y=1mm}
+
+\usepackage{siunitx}
+\sisetup{output-decimal-marker={,},detect-all}
+
+% Bricht lange URLs "schön" um
+\usepackage[hyphens,obeyspaces,spaces]{url}
+
+% Paket für Textfarben
+\usepackage{xcolor} 
+\definecolor{LightGray}{gray}{0.9}
+\usepackage[pagecolor=white]{pagecolor}
+
+% Mathematische Symbole importieren
+\usepackage{amssymb}
+
+% Paket für Zeilenabstand
+\usepackage{setspace}
+
+% Für Bildbezeichner
+\usepackage{capt-of}
+
+% Für Stichwortverzeichnis
+\usepackage{makeidx}
+
+% Für if und while 
+\usepackage{etoolbox}
+
+% Konfiguriere das Inhaltsverzeichnis
+\usepackage{tocbasic}
+\DeclareTOCStyleEntries[
+  raggedentrytext,
+  %numwidth=0pt, if numbers=noenddot is not set
+  numsep=1ex,
+  dynnumwidth,
+]{tocline}{chapter,section}
+\DeclareTOCStyleEntries[
+  linefill=\TOCLineLeaderFill,
+]{tocline}{section,subsection,subsubsection,paragraph,subparagraph}
+
+\newcommand*\tocentryformat[1]{{\rmfamily#1}}
+\RedeclareSectionCommands
+  [tocentryformat=\tocentryformat,tocpagenumberformat=\tocentryformat]{subsection,subsubsection,paragraph,subparagraph}
+
+\newcommand*\tocentrysectionformat[1]{{\rmfamily\bfseries#1}}
+\RedeclareSectionCommands
+  [tocentryformat=\tocentrysectionformat,tocpagenumberformat=\tocentrysectionformat]{section}  
+  
+\DeclareTOCStyleEntries[
+  pagenumberbox=\hbox,
+  dynnumwidth]{tocline}{chapter,section,subsection,subsubsection,paragraph,subparagraph,figure,table}
+
+% Für schönere Listings
+\usepackage[newfloat,]{minted}
+\setminted{
+  frame=lines,
+  framesep=2mm,
+  baselinestretch=1.2,
+  bgcolor=LightGray,
+  fontsize=\footnotesize,
+  linenos,
+  breaklines=true,
+  breakanywhere=true,
+  autogobble,
+  tabsize=2
+}
+\setmintedinline{}
+
+% Keine Floats bei Listings
+\newenvironment{code}[2]
+  {\captionsetup{type=listing}
+  \providecommand{\captiontitle}{#1}
+  \providecommand{\labeltitle}{#2}
+  \vspace*{0.3cm}
+  }
+  {
+  \vspace*{-0.8cm}
+  \caption{\captiontitle}
+  \label{\labeltitle}
+  \vspace*{0.35cm}
+  }
+\SetupFloatingEnvironment{listing}{}
+
+% Nummerierung inkl. Section
+\usepackage{chngcntr}
+\counterwithin{table}{section}
+\counterwithin{figure}{section}
+\counterwithin{listing}{section}
+
+% Abkürzungsverzeichnis
+\usepackage[printonlyused, smaller, withpage]{acronym}
+
+% Erzeugt Inhaltsverzeichnis mit Querverweisen zu den Abschnitten (PDF Version)
+\usepackage[bookmarksnumbered,hyperfootnotes=false,hypertexnames=false]{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=blue,
+    citecolor = black,      
+    urlcolor=blue,
+}
+
+% Darf erst hier eingebunden werden! 
+\usepackage{subfiles}
+\usepackage{csquotes}
+
+% Indexerstellung
+\makeindex
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                 %                    
+%                   Definition Zitierstil                         %
+%                                                                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Zitierung nach IEEE
+
+%\usepackage[
+%backend=biber,
+%style=ieee,
+%autocite=inline,
+%]{biblatex}
+%\addbibresource{bibtex/hauptdatei.bib}
+
+% Zitierung nach APA
+
+\usepackage[
+backend=biber,
+style=apa,
+autocite=inline,
+]{biblatex}
+\addbibresource{bibtex/hauptdatei.bib}
+
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                 %                    
+%                    Definition Deckblatt                         %
+%                                                                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% true für Bachelorarbeit / false für Hausarbeit
+\newbool{bachelorarbeit}
+\setbool{bachelorarbeit}{false}
+
+% Setze Fachbereich
+\newcommand{\department}{Fachbereich II \\ Management und Informationssysteme}
+
+% Setze Studiengang
+\newcommand{\studyprogram}{Wirtschaftsinformatik B.Sc.}
+
+% Setze Modulname (bachelorarbeit muss false sein)
+\newcommand{\modulname}{Software Engineering 1 (SWE 1)}
+
+% Setze Dozent:in (bachelorarbeit muss false sein)
+\newcommand{\auditor}{\textbf{Dozent:in:} \> Prof. Dr. Laura Bieker-Walz}
+
+% Setze Gutachter:innen (bachelorarbeit muss true sein)
+\newcommand{\firstauditor}{\textbf{Erstgutachter:} \> Prof. Dr. Maxi Mustermann}
+\newcommand{\secondauditor}{\textbf{Zweitgutachterin:} \> Prof. Dr. Maxi Musterfrau}
+
+% Setze Titel und Untertitel der Abreit 
+\newcommand{\thetitle}{Literaturzusammenfassung} 
+\newcommand{\thesubtitle}{}
+
+% Setze Autor:in und MatNr.
+\newcommand{\theauthor}{Magne Tuekam }
+\newcommand{\matriculationnumber}{41881}
+
+% Abstand zwischen Name und MatNr. (siehe Deckblatt)
+\newcommand{\myspace}{1.9cm}
+
+% Muss in src/basic_structure/deckblatt.tex einkommentiert werden! 
+
+\newcommand{\secondauthor}{\> Danielle Matcheu  \> MatNr. \\}
+\newcommand{\fourthauthor}{\> Joslyno Azemgning \> MatNr. 42616\\}
+\newcommand{\fifthauthor}{\> Joyce Markline Sambou Leundja\> MatNr. \\}
+
+% PDF Metadaten
+%\hypersetup{pdfinfo={
+%Title={\thetitle},
+%Author={\theauthor}
+%}}
+
+\hypersetup{pdfinfo={
+Title={\thetitle},
+Author={\theauthor}
+}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                 %                    
+%                     Beginn des Inhalts                          %
+%                                                                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Special Characters:                                            %
+%                                                                 %
+%             \& \% \$ \# \_ \{ \}                                %
+%             \textasciitilde (~)                                 %
+%             \textasciicircum (^)                                %     
+%             \textbackslash (\)                                  %                    
+%      \glqq Text\grqq{} für Anführungszeichen                    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+
+
+% Definition Header Sections sollen in der Kopfzeile stehen; Kopfzeile mit Unterstrich
+\automark[subsection]{section}
+\KOMAoptions{headsepline=true}
+%\ihead{Kopfzeile innen}
+%\chead{Kopfzeile außen}
+\ohead{\headmark}
+
+% Definition footer \pagemark steht für Seitennummer
+%\ifoot{Fußzeile innen}
+%\cfoot{Fußzeile Mitte}
+\ofoot{\pagemark}
+
+% Hier werden die Trennvorschläge inkludiert
+\input{src/basic_structure/trennung.tex}
+
+% Leere Seite am Anfang
+%\thispagestyle{empty} % erzeugt Seite ohne Kopf- / Fusszeile
+%\mbox{}
+%\newpage
+
+% Titelseite 
+\input{src/basic_structure/deckblatt.tex}
+\newpage
+
+% Singlespacing (Zeilenabstand) (Default)
+\singlespacing
+\normalsize
+
+% Abstract falls gewünscht
+%\thispagestyle{empty}
+%\input{abstract}
+%\newpage
+
+% Inhaltsverzeichnis anzeigen
+\pagestyle{empty}
+\tableofcontents
+\newpage
+\pagestyle{headings}
+
+% Header für den Inhalt 
+\KOMAoptions{headsepline=true}
+\ohead{\headmark}
+
+% Input Inhalt
+\input{src/Einleitung.tex}
+
+\input{src/anforderungsanalyse.tex}
+
+%\input{src/fazit.tex}
+\input{src/Zusammenfaßung.tex}
+%\input{src/literaturverzeichnis.tex}
+\newpage
+
+% Literaturverzeichnis anzeigen
+% Literaturverzeichnis anzeigen
+\ohead{Literaturverzeichnis} % Korrektur für Header
+ \phantomsection
+ \addcontentsline{toc}{section}{Literaturverzeichnis}
+ \renewcommand\refname{Literaturverzeichnis}
+ \printbibliography
+ \newpage
+
+
+%\ohead{Literaturverzeichnis}%{\leftmark} % Korrektur für Header
+%\phantomsection
+%\addcontentsline{toc}{section}{Literaturverzeichnis}
+%\renewcommand\refname{Literaturverzeichnis}
+%\printbibliography
+%\newpage
+%\usepackage[backend=biber,style=authoryear]{biblatex}
+%\addbibresource{hauptdatei.bib}  % Name deiner Bib-Datei
+
+%\begin{document}
+
+% ... dein Inhalt ohne Zitate ...
+
+%\begin{frame}{}
+%\nocite{*}  % <<--- DAS ist der wichtige Befehl
+  %\printbibliography[heading=none]
+%\end{frame}
+%\newpage
+
+% Abbildungsverzeichnis anzeigen
+%\ohead{\headmark}
+%\listoffigures
+%\addcontentsline{toc}{section}{Abbildungsverzeichnis}
+%\newpage
+
+
+% Tabellenverzeichnis anzeigen
+%\listoftables
+%\addcontentsline{toc}{section}{Tabellenverzeichnis}
+%\newpage
+
+
+% Listingverzeichnis anzeigen
+%\renewcommand{\listlistingname}{Listingverzeichnis}
+%\listoflistings 
+%\addcontentsline{toc}{section}{Listingverzeichnis}
+%\newpage
+
+
+% Abkürzungsverzeichnis anzeigen
+%\ohead{Abkürzungsverzeichnis} % Korrektur für Header 
+%\section*{Abkürzungsverzeichnis}
+%\input{src/basic_structure/abkuerzungen.tex}
+%\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
+%\newpage
+
+
+% Kein Header für Anhang (Deckblatt) 
+\KOMAoptions{headsepline=false}
+\ohead{}
+
+% Beginn Anhang
+\input{src/anhang/anhang_deckblatt.tex}
+
+% Anhang römisch 
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\Roman{subsection}}
+\setcounter{section}{0}
+\counterwithin{table}{subsection}
+\counterwithin{figure}{subsection}
+\counterwithin{listing}{subsection}
+
+% Header Anhang (Inhalt)
+\KOMAoptions{headsepline=true}
+\ohead{\headmark}
+\automark{subsection}
+
+% Input Anhang 
+%\input{src/anhang/anhang.tex}
+%\newpage
+
+% Selbstständigkeits Erklärung
+\phantomsection
+\addcontentsline{toc}{section}{Selbstständigkeitserklärung}
+
+% Header für Erklärung
+\ohead{Selbstständigkeitserklärung}
+
+% Input Erklärung
+\input{src/basic_structure/erklaerung.tex}
+
+% Leere Abschlussseite
+%\newpage
+%\thispagestyle{empty} % erzeugt Seite ohne Kopf- / Fusszeile
+%\mbox{}
+
+\end{document}

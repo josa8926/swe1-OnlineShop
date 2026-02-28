@@ -1,0 +1,277 @@
+.topbar {
+  background: #d4a017;
+  color: #fff;
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px 60px;
+  font-size: 14px;
+}
+
+.topbar a {
+  color: #fff;
+  margin-left: 25px;
+  text-decoration: none;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
+.hero {
+  background: url("images/hero-shop.jpg") center/cover no-repeat;
+
+  height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero::before {
+  content:"";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.hero-box {
+  position: relative;
+  color: #fff;
+  padding: 50px;
+  text-align: center;
+  max-width: 650px;
+}
+
+.hero-box h1 {
+  font-size: 38px;
+  margin-bottom: 15px;
+}
+
+.hero-box p {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.hero-box button {
+  padding: 14px 35px;
+  background: #d4a017;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.flags {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  padding: 30px;
+  background: rgba(255,255,255,0.6);
+}
+
+.flags span {
+  font-size: 34px;
+  opacity: 0.9;
+}
+
+        body.log {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #1f4037, #99f2c8);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+.categories {
+  padding: 70px 60px;
+  text-align: center;
+}
+
+.categories h2 {
+  font-size: 28px;
+  margin-bottom: 40px;
+  color: white ;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.category {
+  background: rgba(255,255,255,0.85);
+  padding: 45px 20px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.category:hover {
+  background: rgba(255,255,255,1);
+}
+
+
+@media (max-width: 900px) {
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+}
+
+.error-box {
+  background: #ffebee;
+  color: #b71c1c;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.success-box {
+  background: #e8f5e9;
+  color: #1b5e20;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+main {
+  flex: 1;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: rgba(255,255,255,0.85);
+  border-bottom: 1px solid #eee;
+}
+
+.logo a {
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: #111;
+}
+
+.header-right a {
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  color: #111;
+}
+
+.cart {
+  font-size: 22px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.back-home {
+  text-decoration: none;
+  padding: 10px 15px;
+  background: rgba(255,255,255,0.7);
+  border-radius: 6px;
+  font-weight: 500;
+  color: #111;
+}
+
+.back-home:hover {
+  background: rgba(255,255,255,0.9);
+}
+nav {
+  text-align: center;
+  padding: 15px 0;
+  background: rgba(255,255,255,0.7);
+}
+
+nav a {
+  margin: 0 20px;
+  text-decoration: none;
+  font-weight: 500;
+  color: #111;
+}
+
+.auth-container {
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-box {
+  background: rgba(255,255,255,0.9);
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.auth-box h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1f4037;
+}
+
+.auth-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.auth-box button {
+  color: white;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  padding: 12px;
+  background: #d4a017;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.auth-box button:hover {
+  background: #A17E02;
+  {
+
+    footer {
+      color: #202D0B;
+      padding: 15px;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    body.Hauptseite {
+    background: url('https://img.freepik.com/photos-premium/table-brunch-dans-cafe-nourriture-delicieuse-table-petit-dejeuner-brunch-remplie-toutes-sortes-nourriture-delicieuse_343960-31696.jpg') center/cover no-repeat fixed;
+    position: relative;
+    color: #111;
+}

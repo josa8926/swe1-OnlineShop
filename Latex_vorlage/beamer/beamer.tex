@@ -1,0 +1,246 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                 %
+%                 Packages / Grundeinstellungen                   %
+%                                                                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Festlegung des Allgemeinen Dokumentenformat
+\documentclass[aspectratio=169]{beamer}
+\usetheme{Madrid}
+
+% Weitere Pakete
+\usepackage{microtype}
+\usepackage{caption}
+\usepackage{fontspec}
+\usepackage{pdflscape}
+\usepackage{float}
+\usepackage{dirtree}
+\usepackage{subcaption}
+\usepackage{enumitem}
+\usepackage[strict]{changepage}
+\usepackage[section]{placeins}
+\usepackage{graphicx}
+\usepackage[ngerman]{babel}
+\usepackage{floatflt}
+\usepackage[right]{eurosym}
+\usepackage[pagecolor=white]{pagecolor}
+
+% Schriftart 
+\usepackage{lmodern}
+\setmainfont{TeX Gyre Termes}
+\setsansfont{TeX Gyre Adventor}
+
+% Booktabs Tabellen
+\usepackage{tabularray}
+\UseTblrLibrary{booktabs}
+\DefTblrTemplate{contfoot-text}{normal}{Fortsetzung auf nächster Seite}
+\SetTblrTemplate{contfoot-text}{normal}
+\DefTblrTemplate{conthead-text}{normal}{}
+\SetTblrTemplate{conthead-text}{normal}
+
+% Um Captions in Tabellen zu deaktivieren 
+\DefTblrTemplate{caption-tag}{default}{Tabelle}
+\SetTblrStyle{caption-tag}{meerblau}
+%\DefTblrTemplate{caption-sep}{default}{}
+%\DefTblrTemplate{caption-text}{default}{}
+
+% tikz
+\usepackage{tikz}
+\usetikzlibrary{calc,arrows,math}
+\usetikzlibrary{shapes.geometric,positioning}
+
+%% Schaltpläne nach europäischen Richtlinien
+\usepackage[european]{circuitikz}
+\tikzset{x=1mm,y=1mm}
+
+\usepackage{siunitx}
+\sisetup{output-decimal-marker={,},detect-all}
+
+% Bricht lange URLs "schön" um
+\usepackage[]{url}
+
+% Paket für Textfarben
+\usepackage{xcolor} 
+\definecolor{LightGray}{gray}{0.9}
+
+% Mathematische Symbole importieren
+\usepackage{amssymb}
+
+% Paket für Zeilenabstand
+\usepackage{setspace}
+
+% Für Bildbezeichner
+\usepackage{capt-of}
+
+% Für Stichwortverzeichnis
+\usepackage{makeidx}
+
+% Für if und while 
+\usepackage{etoolbox}
+
+% Für schönere Listings
+\usepackage[newfloat]{minted}
+\setminted{
+  frame=lines,
+  framesep=2mm,
+  baselinestretch=1.2,
+  bgcolor=LightGray,
+  fontsize=\tiny,
+  linenos,
+  breaklines=true,
+  breakanywhere=true,
+  autogobble,
+  tabsize=2
+}
+\setmintedinline{}
+
+% Erzeugt Inhaltsverzeichnis mit Querverweisen zu den Abschnitten (PDF Version)
+\usepackage[]{hyperref}
+
+% Darf erst hier eingebunden werden! 
+\usepackage[style=german]{csquotes}
+
+% Indexerstellung
+\makeindex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                 %                    
+%                   Definition Zitierstil                         %
+%                                                                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Zitierung nach IEEE
+\usepackage[
+backend=biber,
+style=ieee,
+autocite=inline
+]{biblatex}
+\addbibresource{bibtex/beamer.bib}
+\AtBeginBibliography{\tiny}
+
+% Zitierung nach APA
+%\usepackage[
+%backend=biber,
+%style=apa,
+%autocite=inline,
+%]{biblatex}
+%\addbibresource{bibtex/hauptdatei.bib}
+
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                 %                    
+%                  Definition Beamer                              %
+%                                                                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Define basic color sheme 
+\definecolor{seagreen}{RGB}{0,82,76}
+\definecolor{meerblau}{RGB}{0,45,116}
+\definecolor{himmelblau}{RGB}{165,255,255}
+\definecolor{mint}{RGB}{143,255,197}
+\definecolor{violet}{RGB}{73,14,103}
+\definecolor{flieder}{RGB}{205,161,255}
+\definecolor{bremerhavengruen}{RGB}{104,129,60}
+
+% color settings 
+\setbeamercolor{date in head/foot}{bg=meerblau, fg=white}
+\setbeamercolor{palette secondary}{bg=meerblau,fg=white}
+\setbeamercolor{palette tertiary}{bg=meerblau,fg=white}
+\setbeamercolor{palette quaternary}{bg=meerblau,fg=white}
+\setbeamercolor{palette quaternary}{bg=meerblau,fg=white}
+\setbeamercolor{section in toc}{fg=black}
+\setbeamercolor{structure}{fg=meerblau}
+
+% define toc 
+\setbeamertemplate{section in toc}{%
+  {\color{orange!70!black}\inserttocsectionnumber.}~\inserttocsection}
+\setbeamercolor{section in toc}{bg=white,fg=black}
+\setbeamertemplate{section in toc}{%
+  {\color{black}\rule[0.3ex]{3pt}{3pt}}~\inserttocsection\par}
+
+\setbeamertemplate{subsection in toc}{%
+  {\color{orange!70!black}\inserttocsubsectionnumber.}~\inserttocsubsection}
+\setbeamercolor{subsection in toc}{bg=white,fg=black}
+\setbeamertemplate{subsection in toc}{%
+  \hspace{0.5em}{\color{black}\rule[0.3ex]{3pt}{3pt}}~\inserttocsubsection\par}
+
+
+% define basic frame 
+\beamertemplatenavigationsymbolsempty
+
+\setbeamersize
+{
+    text margin left=1.5cm,
+    text margin right=3cm
+}
+\setbeamertemplate{blocks}[default]
+\setbeamertemplate{title page}[default][rounded=false]
+\setbeamercolor{block title}{bg=meerblau,fg=white}
+\setbeamerfont{caption}{size=\scriptsize}
+\setbeamerfont{date}{size=\small}
+\setbeamerfont{author}{size=\small}
+\setbeamertemplate{frametitle continuation}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                 %                    
+%                    Definition Titelframe                        %
+%                                                                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\author{Maxi Musterfrau (12345) \and Maxi Mustermann (54321)}
+\date[10.\,August\,2021]{10. August 2021}
+\title{Titel}
+\subtitle{Untertitel}
+\institute[]{
+  Hochschule Bremerhaven\\
+  \vspace{0.3cm}
+  Fachbereich II\\
+  Management und Informationssysteme\\
+  Informatik\\
+  \vspace{0.3cm}
+  Modul\\
+  Modulname
+  }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                 %                    
+%                     Beginn des Inhalts                          %
+%                                                                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Special Characters:                                            %
+%                                                                 %
+%             \& \% \$ \# \_ \{ \}                                %
+%             \textasciitilde (~)                                 %
+%             \textasciicircum (^)                                %     
+%             \textbackslash (\)                                  %                    
+%      \glqq Text\grqq{} für Anführungszeichen                    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% print titleframe 
+{
+\setbeamertemplate{footline}{}
+\begin{frame}
+  \changetext{}{1.5cm}{}{}{}
+  \titlepage
+\end{frame}
+}
+
+% set logo for the next frames  
+\logo{\includegraphics[height=1cm]{abbildungen/hslogo.png}}
+
+% set text margin to default 
+\changetext{}{}{}{}{}
+
+% inputs 
+\input{src/frame_toc.tex}
+\input{src/frame1.tex}
+\input{src/frame2.tex}
+\input{src/frame3.tex}
+\input{src/frame4.tex}
+\input{src/frame_references.tex}
+
+\end{document}

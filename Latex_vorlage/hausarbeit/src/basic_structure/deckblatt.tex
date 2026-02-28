@@ -1,0 +1,56 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%           Deckblatt           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setmainfont{TeX Gyre Adventor}
+\thispagestyle{empty}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.6\textwidth]{src/abbildungen/logoneu.png}
+\end{figure}
+\begin{center}
+	\large{\textbf{\department}}\\
+	\large{\textbf{\studyprogram}}\\
+	\vspace{1cm}
+	\ifbool{bachelorarbeit}{
+		\LARGE{\textbf{Bachelorarbeit}}\\
+		\large{zur Erlangung des akademischen Grades \\ Bachelor of Science}\\
+	}
+	{
+		\large{\textbf{Modul\\ \modulname}}\\
+	}
+	\vspace*{\fill}
+	\line(1,0){450}\\
+	\doublespacing
+	\textbf{\Large{\thetitle}}\\
+	\textbf{\large{\thesubtitle}}\\
+	\line(1,0){450}\\
+\end{center}
+\vspace*{\fill}
+\onehalfspacing
+\small{
+\begin{flushleft}
+	\begin{tabbing}
+		\textbf{Vorgelegt von:} \hspace*{1.9cm}\= \theauthor \hspace*{\myspace}\= MatNr. \matriculationnumber \\
+
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		%                                            %
+		%  Hier weitere Autor:innen einkommentieren  %
+		%   Müssen hauptdatei.tex definiert sein     %
+		%	                                         %
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		
+		\secondauthor
+		\thirdauthor
+		\fourthauthor
+		%\fifthauthor
+
+		\textbf{Vorgelegt am:} \> \today\\
+		\ifbool{bachelorarbeit}{
+			\firstauditor\\
+			\secondauditor\\
+		}
+		{
+			\auditor\\
+		}
+	\end{tabbing}
+\end{flushleft}}
+\setmainfont{TeX Gyre Termes}

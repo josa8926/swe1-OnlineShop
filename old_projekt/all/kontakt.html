@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - Hafenstraße 179</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="includes/style_kontakt.css">
+  </head>
+  <body class="kontakt">
+    <header class="reglog">
+      <h1>Jenny Afro and Asia Shop</h1>
+      <a href="afroseite2.php">Startseite</a>
+    </header>
+
+    <div class="container">
+      <div class="contact-section">
+        <div>
+          <img src="Projekt/Afroshop.png" alt="" class="company-image">
+        </div>
+
+        <div class="contact-info">
+          <h2>Kontaktieren Sie uns</h2>
+
+          <div class="info-grid">
+            <div class="info-column">
+              <div class="info-item">
+                <div class="icon">📍</div>
+                <div>
+                  <h3>Adresse</h3>
+                  <p>Hafenstraße 179<br>27568 Bremerhaven<br>Deutschland</p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="icon">📞</div>
+                <div>
+                  <h3>Telefon</h3>
+                  <p><a href="tel:+4917630311301">0176 30311301</a></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="info-column">
+              <div class="info-item">
+                <div class="icon">🕐</div>
+                <div>
+                  <h3>Öffnungszeiten</h3>
+                  <table class="hours-table">
+                    <tr>
+                      <td class="day">Montag</td>
+                      <td class="time">09:00–20:00</td>
+                    </tr>
+                    <tr>
+                      <td class="day">Dienstag</td>
+                      <td class="time">09:00–20:00</td>
+                    </tr>
+                    <tr>
+                      <td class="day">Mittwoch</td>
+                      <td class="time">09:00–20:00</td>
+                    </tr>
+                    <tr>
+                      <td class="day">Donnerstag</td>
+                      <td class="time">09:00–20:00</td>
+                    </tr>
+                    <tr>
+                      <td class="day">Freitag</td>
+                      <td class="time">09:00–20:00</td>
+                    </tr>
+                    <tr>
+                      <td class="day">Samstag</td>
+                      <td class="time">09:00–20:00</td>
+                    </tr>
+                    <tr>
+                      <td class="day">Sonntag</td>
+                      <td class="closed">Geschlossen</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-container">
+        <div id="map"></div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="kontakt.js"></script>
+  </body>
+</html>
+
