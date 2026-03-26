@@ -33,5 +33,8 @@ supporting a local Afroshop by providing a digital interface for showcasing prod
 - Writing clean, structured, and maintainable code
 - Applying software engineering principles in a practical project
 
+## Link
+https://informatik.hs-bremerhaven.de/docker-swe1-2025-team02-web/afroseite2.php
+
 ## Author
 Joyce Sambou
